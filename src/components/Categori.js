@@ -9,13 +9,20 @@ const Categori = () => {
       <p>카테고리별로 판매량이 높은 TOP3 제품을 모았어요!</p>
       {/* card 호출 내용 :  */}
       {
-
+        CardItem.map((item, idx) => {
+          return (
+            <CardSet
+              setItem={
+                item
+              }
+              setName={
+                idx%2? "even" : "odd" 
+              }
+              setIdx={idx}
+            />
+          )
+        })
       }
-      <CardSet 
-        setItem ={
-        CardItem[0]
-        }
-      />
     </div>
   );
 };

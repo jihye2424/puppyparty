@@ -1,4 +1,190 @@
-.cardset{
-  margin-top: 3rem;
+*{
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+
+//카드셋 scss
+#cardset{
+  margin-top: 5rem;
+  width: calc(360px * 4);
+  @include tablet{
+    width: 100%;
+    height: 615px;
+  }
   display: flex;
+  flex-direction: row;
+  @include tablet{
+    flex-direction: column;
+  }
+  .cardwrap{
+    display: flex;
+    @include tablet{
+      margin: 0 auto;
+    }
+  }
+}
+
+//카드섹션 scss
+#cardsection{
+  width: 360px;
+  height: 550px;
+  @include tablet{
+    width: 768px;
+    height: 220px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    flex-direction: row;
+    border-radius: 20px 20px 0 0 ;
+  }
+  @include mobile{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+  padding: 2rem;
+  border-radius: 20px 0 0 20px;
+  background-color: var(--color-sub2);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  .section-one{
+    display: inline-block;
+    flex: 1;
+    align-items: center;
+    padding: 2rem;
+  }
+  .card-btn{
+    font-family: 'NanumSquareNeoLight';
+    font-weight: bolder;
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    background-color: var(--color-main2);
+    color: var(--color-sub2);
+    @include tablet{
+      display: none;
+    }
+  }
+  .card-title{
+    padding-top: 1rem;
+    font-family: 'yg-jalnan';
+    font-size: 35px;
+    @include tablet{
+      line-height: 1.3;
+      word-break: normal;
+      font-size: 35px;
+    }
+  }
+  .card-des{
+    padding-top: 1rem;
+    font-family: 'NanumSquareNeoLight';
+    font-size: 20px;
+    @include tablet{
+      word-break: normal;
+    }
+  }
+  .card-icon{
+    font-size: 130px;
+    @include tablet{
+      display: flex;
+      align-items: center;
+      font-size: 100px;
+      order: -1;
+    }
+  }
+}
+.odd{
+  #cardsection{
+    background-color: var(--color-sub2);
+  }
+}
+.even{
+  #cardsection{
+    background-color: var(--color-sub1);
+  }
+}
+//카드 scss
+.hoverCard{
+  &:last-child{
+    overflow: hidden;
+    border-radius: 0 20px 20px 0;
+    @include tablet{
+      border-radius: 0;
+    }
+  }
+}
+#card{
+  width: 360px;
+  height: 550px;
+    @include tablet{
+    width: 256px;
+    height: 400px;
+  }
+  font-family: 'NanumSquareNeoLight';
+  color: var(--color-font);
+  .card-img{
+    cursor: pointer;
+    width: 100%;
+    height: 360px;
+    @include tablet{
+      height: 210px;
+    }
+  }
+  .card-one{
+    padding: 1rem;
+    display: inline-block;
+    height: 195px;
+  }
+  .card-two{
+    height: 100px;
+    padding: 0 3rem;
+    .card-name{
+      margin-top: 1rem;
+      font-size: 25px;
+      font-weight: bolder;
+      @include tablet{
+        font-size: 20px;
+      }
+    }
+    .card-des{
+      margin-top: 1rem;
+      font-size: 15px;
+    }
+  }
+  .card-three{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 0 3rem;
+      @include tablet{
+
+      }
+      .card-price{
+      font-size: 20px;
+    }
+    .card-cart{
+      cursor: pointer;
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      padding: 1rem;
+      border-radius: 50%;
+      color: var(--color-main2);
+      font-size: 3rem;
+    }
+  }
+}
+.odd{
+  .card-cart{
+    background-color: var(--color-sub2);
+  }
+}
+.even{
+  .card-cart{
+    background-color: var(--color-sub1);
+  }
 }

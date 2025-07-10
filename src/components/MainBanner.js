@@ -7,7 +7,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 // ▶ 커스텀 화살표
 function NextArrow(props) {
-  const { className, onClick } = props;
+  const { onClick } = props;
   return (
     <div className={"arrow-next"} onClick={onClick}>
       <IoIosArrowForward />
@@ -16,7 +16,7 @@ function NextArrow(props) {
 }
 
 function PrevArrow(props) {
-  const { className, onClick } = props;
+  const { onClick } = props;
   return (
     <div className={"arrow-prev"} onClick={onClick}>
       <IoIosArrowBack />
@@ -31,6 +31,9 @@ const settings = {
   speed: 1000,
   slidesToShow: 1,
   slidesToScroll: 1,
+  autoplay: true,
+  speed: 2000,
+  autoplaySpeed: 5000,
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
   

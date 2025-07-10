@@ -30,11 +30,12 @@ const Cart = ({ cartItem, updateCount, onDelete }) => {
                             <input type="checkbox" checked />
                             <span>전체선택</span>
                         </label>
-                        <p className="cart-count">
+                        <p className="mobile-gift">구매 금액별 사은품</p>
+                        <p className="cart-product">
                             <span>{cartItem.length}</span>개의 상품이 있어요
                         </p>
-                        {/* <hr/> */}
                     </div>
+                    <div className="select-line" />
                     <div className="cart-list">
                         {cartItem.length === 0 ? (
                             // 빈 장바구니
@@ -54,55 +55,72 @@ const Cart = ({ cartItem, updateCount, onDelete }) => {
                             <ul>
                                 {cartItem.map((item) => {
                                     return (
-                                        <li key={item.id}>
+                                        <li
+                                            key={item.id}
+                                            className="cart-count-wrap"
+                                        >
                                             {/* 1: 체크박스+이미지+상품명 */}
-                                            <div className="item-info-left">
-                                                <input
-                                                    type="checkbox"
-                                                    checked
-                                                />
-                                                <img
-                                                    src={`${process.env.PUBLIC_URL}/images/${item.filename}`}
-                                                />
-                                                <h4>{item.name}</h4>
-                                            </div>
-                                            {/* 2: 금액+삭제버튼+수량버튼 */}
-                                            <div className="item-info-right">
-                                                <div className="item-price-delete">
-                                                    <h3>
-                                                        {item.price.toLocaleString()}
-                                                        원
-                                                    </h3>
-                                                    <p
-                                                        className="delete-icon"
-                                                        onClick={() => {
-                                                            onDelete(item.id);
-                                                        }}
-                                                    >
-                                                        <FaRegTrashAlt />
-                                                    </p>
+                                            <div className="item-info">
+                                                <div className="item-info-left">
+                                                    <input
+                                                        type="checkbox"
+                                                        checked
+                                                    />
+                                                    <img
+                                                        src={`${process.env.PUBLIC_URL}/images/${cartItem.setFile}/${cartItem.filename}`}
+                                                    />
                                                 </div>
-                                                <button
-                                                    onClick={() =>
-                                                        updateCount(
-                                                            item.id,
-                                                            item.count - 1
-                                                        )
-                                                    }
-                                                >
-                                                    <FaMinus />
-                                                </button>
-                                                {item.count}
-                                                <button
-                                                    onClick={() =>
-                                                        updateCount(
-                                                            item.id,
-                                                            item.count + 1
-                                                        )
-                                                    }
-                                                >
-                                                    <FaPlus />
-                                                </button>
+                                                <div className="item-info-right">
+                                                    <div className="item-wrap">
+                                                        <h4>
+                                                            {cartItem.name}
+                                                        </h4>
+                                                        {/* 2: 금액+삭제버튼+수량버튼 */}
+                                                        <div className="item-delete">
+                                                            <h3>
+                                                                {cartItem.price.toLocaleString()}
+                                                                원
+                                                            </h3>
+                                                            <p
+                                                                className="delete-icon"
+                                                                onClick={() => {
+                                                                    onDelete(
+                                                                        cartItem.id
+                                                                    );
+                                                                }}
+                                                            >
+                                                                <FaRegTrashAlt />
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div className="item-count-wrap">
+                                                        <button
+                                                            onClick={() =>
+                                                                updateCount(
+                                                                    cartItem.id,
+                                                                    cartItem.count -
+                                                                        1
+                                                                )
+                                                            }
+                                                        >
+                                                            <FaMinus />
+                                                        </button>
+                                                        <p className="item-count">
+                                                            {cartItem.count}
+                                                        </p>
+                                                        <button
+                                                            onClick={() =>
+                                                                updateCount(
+                                                                    cartItem.id,
+                                                                    cartItem.count +
+                                                                        1
+                                                                )
+                                                            }
+                                                        >
+                                                            <FaPlus />
+                                                        </button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </li>
                                     );
@@ -111,6 +129,8 @@ const Cart = ({ cartItem, updateCount, onDelete }) => {
                         )}
                     </div>
                 </div>
+                {/* tablet, mobile 중간 선 */}
+                <div className="cart-divider"></div>
                 {/* 오른쪽 - 결제 요약 */}
                 <div className="cart-summary">
                     <h2>결제 내역</h2>
@@ -133,6 +153,7 @@ const Cart = ({ cartItem, updateCount, onDelete }) => {
                                 원
                             </li>
                         </ul>
+                        <div className="price-line"></div>
                         <ul className="total-price">
                             <li>총 결제 금액</li>
                             <li>

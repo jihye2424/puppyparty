@@ -1,4 +1,5 @@
 #sale {
+  overflow-x: hidden;
   width: 100vw;
   background-color: var(--color-bg);
   display: flex;
@@ -10,8 +11,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // margin: 9rem 0;
-    gap: 2rem;
+    gap: 5rem;
     .sale-txt {
       height: 30%;
       // background-color: red;
@@ -22,21 +22,34 @@
       p {
         font-size: 2rem;
         color: var(--color-sub1);
+        @include mobile {
+          font-size: 1.8rem;
+        }
       }
       h2 {
         font-family: 'NanumSquareNeoExtraBold';
         font-size: 3.5rem;
         margin: 2rem 0;
+        @include mobile {
+          font-size: 3rem;
+        }
       }
       h1 {
         font-size: 3.5rem;
         font-family: 'NanumSquareNeoLight';
+        @include mobile {
+          font-size: 3rem;
+        }
         span {
           width: 210px;
           display: inline-block;
           font-family: 'NanumSquareNeoHeavy';
           font-size: 4.5rem;
           color: var(--color-sub1);
+          @include mobile {
+            width: 200px;
+            font-size: 4rem;
+          }
         }
       }
     }

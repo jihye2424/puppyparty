@@ -22,10 +22,10 @@ const Navigation = () => {
       {/* 메뉴 아이콘 - 태블릿 사이즈 이하에서만 보임 */}
       {/* 데스크탑 메뉴 */}
       <ul className="headerMenu">
-        <li>파티용품</li>
+        <li>파티 용품</li>
         <li>케이크</li>
         <li>간식</li>
-        <li>커플의류</li>
+        <li>커플 의류</li>
       </ul>
       {isOpen && (
         <ul className="toggleMenu">
@@ -35,10 +35,10 @@ const Navigation = () => {
               aria-label="toggle menu"
             />
           <h1>MENU</h1>
-          <li>파티용품</li>
+          <li>파티 용품</li>
           <li>케이크</li>
           <li>간식</li>
-          <li>커플의류</li>
+          <li>커플 의류</li>
       </ul>
       )}
       {/* <div onClick={()=>{navigate('/cart')}}> */}

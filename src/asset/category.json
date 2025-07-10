@@ -1,116 +1,152 @@
 [
     {
         "setID": "set01",
-        "setTitle": "기념일을 더 화려하게!",
+        "setTitle": "기념일을 \n더 화려하게!",
         "setDescription": "꼬깔모자부터 가랜드까지, \n감성 폭발 파티템 가득",
         "setIcon": "파티 용품",
         "products": [
             {
+                "setFile": "party",
                 "product-ID": "party-01",
                 "name": "퍼피미니 꼬깔모자",
                 "description": "반짝이 원단과 부드러운 밴드로 편안하게 착용 가능한 꼬깔모자",
                 "price": 3500,
+                "count": 1,
+                "filename": "party1-1.jpg",
                 "image": "/images/party/party1-1.png"
             },
             {
+                "setFile": "party",
                 "product-ID": "party-02",
                 "name": "퍼피몽글 케이프",
                 "description": "극세사 소재에 말랑한 리본 포인트. 파티룩 완성 아이템",
                 "price": 6500,
+                "count": 1,
+                "filename": "party2-1.jpg",
                 "image": "/images/party/party2-1.png"
             },
             {
+                "setFile": "party",
                 "product-ID": "party-03",
                 "name": "데이지 가랜드",
                 "description": "'Happy Birthday' 문구가 담긴 파티용 벽걸이 장식 세트",
                 "price": 4000,
+                "count": 1,
+                "filename": "party3-1.jpg",
                 "image": "/images/party/party3-1.png"
             }
         ]
     },
     {
         "setID": "set02",
-        "setTitle": "우리 강아지 맞춤 케이크",
+        "setTitle": "우리 강아지 \n맞춤 케이크",
         "setDescription": "이름 각인 & \n색상 커스터마이징 가능!",
         "setIcon": "케이크",
         "products": [
             {
+                "setFile": "dogCake",
                 "product-ID": "cake-01",
                 "name": "포레스트 쿠키케이크",
                 "description": "당근과 연어가 어우러진 귀여운 생일 쿠키 케이크",
                 "price": 9800,
-                "image": "/images/cake/cake1-1.png"
+                "count": 1,
+                "filename": "dogCake1-1.png",
+                "image": "/images/dogCake/dogCake1-1.png"
             },
             {
+                "setFile": "dogCake",
                 "product-ID": "cake-02",
                 "name": "블룸 단호박 파티케이크",
                 "description": "단호박 퓨레와 소고기 토핑이 어우러진 플라워 비주얼 파티 케이크",
                 "price": 14500,
-                "image": "/images/cake/cake2-1.png"
+                "count": 1,
+                "filename": "dogCake2-1.png",
+                "image": "/images/dogCake/dogCake2-1.png"
             },
             {
+                "setFile": "dogCake",
                 "product-ID": "cake-03",
                 "name": "퍼피러브 핑크샌드",
                 "description": "고구마 쿠키에 딸기 크림을 샌드한 러블리한 케이크",
                 "price": 11000,
-                "image": "/images/cake/cake3-1.png"
+                "count": 1,
+                "filename": "dogCake3-1.png",
+                "image": "/images/dogCake/dogCake3-1.png"
             }
         ]
     },
     {
         "setID": "set03",
-        "setTitle": "기념일에 간식은 필수!",
+        "setTitle": "기념일에 \n간식은 필수!",
         "setDescription": "입 짧은 아이도 반하게 할 맛, \n기념일 선물로 딱!",
         "setIcon": "간식",
         "products": [
             {
+                "setFile": "snack",
                 "product-ID": "snack-01",
                 "name": "퍼피치킨팝",
                 "description": "바삭한 한입 너겟, 치킨 러버 퍼피들의 최애템",
                 "price": 5500,
+                "count": 1,
+                "filename": "snack1-1.png",
                 "image": "/images/snack/snack1-1.png"
             },
             {
+                "setFile": "snack",
                 "product-ID": "snack-02",
                 "name": "멍맥주",
                 "description": "무알콜 닭육수 음용 간식! 물 싫어하는 퍼피도 즐기는 건강한 맥주!",
                 "price": 7000,
+                "count": 1,
+                "filename": "snack2-1.png",
                 "image": "/images/snack/snack2-1.png"
             },
             {
+                "setFile": "snack",
                 "product-ID": "snack-03",
                 "name": "퍼피스모어쿠키",
                 "description": "마시멜로 토핑의 고구마 베이스 쿠키",
                 "price": 4000,
+                "count": 1,
+                "filename": "snack3-1.png",
                 "image": "/images/snack/snack3-1.png"
             }
         ]
     },
     {
         "setID": "set04",
-        "setTitle": "드레스 코드를 맞춰야 진짜 파티",
+        "setTitle": "드레스 코드를 \n맞춰야 진짜 파티",
         "setDescription": "견주&강아지 커플룩 \n예쁜 옷 맞춰 입고 파티 즐겨요",
         "setIcon": "커플 의류",
         "products": [
             {
+                "setFile": "coupleT",
                 "product-ID": "coupleT-01",
                 "name": "모찌 패밀리 시밀러룩",
                 "description": "우리 둘이 하나처럼, 모찌처럼 귀엽게! (모자+티셔츠 세트)",
                 "price": 33200,
+                "count": 1,
+                "filename": "coupleT1-1.png",
                 "image": "/images/coupleT/coupleT1-1.png"
             },
             {
+                "setFile": "coupleT",
                 "product-ID": "coupleT-02",
                 "name": "도트 블랙 원피스 시원룩",
                 "description": "여름에도 시원하고 시크하게! 시밀러룩으로 바캉스 준비 끝",
                 "price": 44700,
+                "count": 1,
+                "filename": "coupleT2-1.png",
                 "image": "/images/coupleT/coupleT2-1.png"
             },
             {
+                "setFile": "coupleT",
                 "product-ID": "coupleT-03",
                 "name": "베어피크닉 시밀러룩",
                 "description": "햇살 좋은 날, 곰돌이와 함께한 브런치 타임",
                 "price": 35800,
+                "count": 1,
+                "filename": "coupleT3-1.png",
                 "image": "/images/coupleT/coupleT3-1.png"
             }
         ]

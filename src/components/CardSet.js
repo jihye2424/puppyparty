@@ -2,24 +2,29 @@ import Card from "./Card";
 import CardSection from "./CardSection";
 
 
-const CardSet = ({setItem}) => {
+const CardSet = ({ setItem, setName, setIdx }) => {
+  console.log(setItem);
   return (
-    <div className="cardset">
-      <CardSection 
+    <div id="cardset" className={setName}>
+      <CardSection
         title={setItem.setTitle}
         des={setItem.setDescription}
         btn={setItem.setIcon}
+        setName={setName}
+        setIdx={setIdx}
       />
-      {
-        setItem.products.map((item,idx)=>{
-          return (
-            <Card
-              key={idx}
-              products={item}
-            />
-          )
-        })
-      }
+      <div className="cardwrap">
+        {
+          setItem.products.map((item, idx) => {
+            return (
+              <Card
+                key={idx}
+                products={item}
+              />
+            )
+          })
+        }
+      </div>
     </div>
   );
 };
