@@ -1,47 +1,42 @@
-import React, { useState } from 'react';
-import ProductImageSlider from './ProductImageSlider';
+import React, { useState } from "react";
+import ProductImageSlider from "./ProductImageSlider";
 import { CiShare2 } from "react-icons/ci";
-
-const ProductTopSection = () => {
+const ProductTopSection = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
-  const price = 13000;
+  const { name, description, price, image } = product;
   const totalPrice = price * quantity;
-
-  const handleQuantity = (type) => {
-    if (type === 'minus' && quantity > 1) {
-      setQuantity(quantity - 1);
-    } else if (type === 'plus') {
-      setQuantity(quantity + 1);
-    }
-  };
-
+  const handleQuantity = (type) =>
+    setQuantity(q => (type === "minus" ? Math.max(1, q - 1) : q + 1));
+  // :흰색_확인_표시: 이미지 슬라이드를 위해 두 장 구성
+  const image1 = `${process.env.PUBLIC_URL}${image}`;
+  const image2 = `${process.env.PUBLIC_URL}${image.replace("-1", "-2")}`;
   return (
     <div className="product-top">
       <div className="image-box">
-        <ProductImageSlider />
+        <ProductImageSlider images={[image1, image2]} />
       </div>
       <div className="info-box">
-        <div className='title-best'>
-        <h2 className="title">퍼피러브 핑크샌드</h2>
-        <p className='best'>BEST</p>
+        <div className="title-best">
+          <h2 className="title">{name}</h2>
+          <p className="best">BEST</p>
         </div>
-        <p className="desc">고구마 쿠키에 딸기 크림을 샌드한 러블리한 케이크</p>
+        <p className="desc">{description}</p>
         <div className="rating">★★★★★ <span>5.0</span></div>
-        <div className='price-icon'>
-        <div className="price">{price.toLocaleString()}원</div>
-        <CiShare2 />
-        </div>
+        <div className="price-icon">
+          <div className="price">{price.toLocaleString()}원</div>
+          <CiShare2 />
+          </div>
         <div className="option">
           <label>옵션</label>
           <select>
             <option>옵션을 선택해 주세요</option>
-            <option>퍼피러브 핑크샌드</option>
+            <option>{name}</option>
           </select>
         </div>
 
         <div className="quantity-box">
           <div className='box-number'>
-          <span>퍼피러브 핑크샌드</span>
+          <span>{name}</span>
           <div className="quantity">
             <button onClick={() => handleQuantity('minus')}>-</button>
             <span>{quantity}</span>
@@ -63,5 +58,4 @@ const ProductTopSection = () => {
     </div>
   );
 };
-
 export default ProductTopSection;

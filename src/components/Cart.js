@@ -3,12 +3,44 @@ import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const Cart = ({ cartItem, updateCount, onDelete }) => {
     const navigate = useNavigate();
+    // 1. 체크 상태 관리
+    const [checkedItems, setCheckedItems] = useState({});
+    // 2. 전체선택 상태 계산
+    const allChecked =
+        cartItem.length > 0 && cartItem.every((item) => checkedItems[item.id]);
+    // 3. 전체선택 체크박스 핸들러
+    const handleCheckAll = (e) => {
+        const checked = e.target.checked;
+        // 모든 아이템 체크 상태를 전체 선택/해제로 변경
+        const newCheckedItems = {};
+        cartItem.forEach((item) => {
+            newCheckedItems[item.id] = checked;
+        });
+        setCheckedItems(newCheckedItems);
+    };
+    // 4. 개별 체크박스 핸들러
+    const handleCheckItem = (e, id) => {
+        const checked = e.target.checked;
+        setCheckedItems((prev) => ({
+            ...prev,
+            [id]: checked,
+        }));
+    };
     const totalPrice = cartItem.reduce((sum, item) => {
         return sum + item.price * item.count;
     }, 0);
+    // cartItem이 바뀔 때 체크 상태 초기화 (모두 선택 안 된 상태)
+    useEffect(() => {
+        const initialChecked = {};
+        cartItem.forEach((item) => {
+            initialChecked[item.id] = true;
+        });
+        setCheckedItems(initialChecked);
+    }, [cartItem]);
     return (
         <div className="cart-container">
             {/* 장바구니 */}
@@ -27,7 +59,11 @@ const Cart = ({ cartItem, updateCount, onDelete }) => {
                     {/* 상품 전체 갯수 */}
                     <div className="select-all">
                         <label>
-                            <input type="checkbox" checked />
+                            <input
+                                type="checkbox"
+                                checked={allChecked}
+                                onChange={handleCheckAll}
+                            />
                             <span>전체선택</span>
                         </label>
                         <p className="mobile-gift">구매 금액별 사은품</p>
@@ -64,28 +100,36 @@ const Cart = ({ cartItem, updateCount, onDelete }) => {
                                                 <div className="item-info-left">
                                                     <input
                                                         type="checkbox"
-                                                        checked
+                                                        checked={
+                                                            !!checkedItems[
+                                                                item.id
+                                                            ]
+                                                        }
+                                                        onChange={(e) =>
+                                                            handleCheckItem(
+                                                                e,
+                                                                item.id
+                                                            )
+                                                        }
                                                     />
                                                     <img
-                                                        src={`${process.env.PUBLIC_URL}/images/${cartItem.setFile}/${cartItem.filename}`}
+                                                        src={`${process.env.PUBLIC_URL}/images/${item.setFile}/${item.filename}`}
                                                     />
                                                 </div>
                                                 <div className="item-info-right">
                                                     <div className="item-wrap">
-                                                        <h4>
-                                                            {cartItem.name}
-                                                        </h4>
+                                                        <h4>{item.name}</h4>
                                                         {/* 2: 금액+삭제버튼+수량버튼 */}
                                                         <div className="item-delete">
                                                             <h3>
-                                                                {cartItem.price.toLocaleString()}
+                                                                {item.price.toLocaleString()}
                                                                 원
                                                             </h3>
                                                             <p
                                                                 className="delete-icon"
                                                                 onClick={() => {
                                                                     onDelete(
-                                                                        cartItem.id
+                                                                        item.id
                                                                     );
                                                                 }}
                                                             >
@@ -97,8 +141,8 @@ const Cart = ({ cartItem, updateCount, onDelete }) => {
                                                         <button
                                                             onClick={() =>
                                                                 updateCount(
-                                                                    cartItem.id,
-                                                                    cartItem.count -
+                                                                    item.id,
+                                                                    item.count -
                                                                         1
                                                                 )
                                                             }
@@ -106,13 +150,13 @@ const Cart = ({ cartItem, updateCount, onDelete }) => {
                                                             <FaMinus />
                                                         </button>
                                                         <p className="item-count">
-                                                            {cartItem.count}
+                                                            {item.count}
                                                         </p>
                                                         <button
                                                             onClick={() =>
                                                                 updateCount(
-                                                                    cartItem.id,
-                                                                    cartItem.count +
+                                                                    item.id,
+                                                                    item.count +
                                                                         1
                                                                 )
                                                             }
@@ -144,7 +188,9 @@ const Cart = ({ cartItem, updateCount, onDelete }) => {
                             <li>0원</li>
                         </ul>
                         <ul>
-                            <li>배송비</li>
+                            <li>
+                                배송비 <span>(50,000원 이상 무료배송)</span>
+                            </li>
                             <li>
                                 {(totalPrice > 50000
                                     ? 0

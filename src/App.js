@@ -1,3 +1,4 @@
+import CardItem from "./asset/category.json";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
 import MainBanner from "./components/MainBanner";
@@ -33,7 +34,6 @@ const App = () => {
         });
       } else {
         // 새 상품이면 count: 1로 추가
-
         newItem = [...prev, { ...item, count: 1 }];
       }
       return newItem;
@@ -67,38 +67,38 @@ const App = () => {
   return (
     <BrowserRouter>
       <div id="App">
+        {/* 로고 눌렀을 시 메인홈 이동 하기 위해서 네비게이션 컴포넌트 위치 맨 위로 올립니다 */}
+        <Navigation/>
+
         <Routes>
           <Route
             path="/"
             element={
               <>
-                <Navigation />
                 <MainBanner />
                 <BestProducts />
                 <Sale />
-                <Categori />
+                <Categori data={CardItem} onAddCart={handleAddToCart}/>
                 <EventSection />
-                <Footer />
               </>
             }
           />
           <Route
-            path="/"
+            path="/cart"
             element={
               <>
-                <Navigation />
                 <Cart
                   cartItem={cartItem}
                   updateCount={updateCartItemCount}
                   onDelete={deleteCartItem}
                 />
-                <Footer />
               </>
             }
           />
           {/* 상품 상세페이지 */}
           <Route path="/product/:id" element={<ProductPage />} />
         </Routes>
+                <Footer />
       </div>
     </BrowserRouter>
   );

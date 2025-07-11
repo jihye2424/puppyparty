@@ -2,7 +2,7 @@ import Card from "./Card";
 import CardSection from "./CardSection";
 
 
-const CardSet = ({ setItem, setName, setIdx }) => {
+const CardSet = ({ setItem, setName, setIdx, onAdd }) => {
   return (
     <div id="cardset" className={setName}>
       <CardSection
@@ -19,6 +19,7 @@ const CardSet = ({ setItem, setName, setIdx }) => {
               <Card
                 key={idx}
                 products={item}
+                onAdd={onAdd}
               />
             )
           })
