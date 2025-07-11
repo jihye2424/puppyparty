@@ -1,0 +1,36 @@
+
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 2;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+
+    &.left {
+      left: 0.5rem;
+    }
+
+    &.right {
+      right: 0.5rem;
+    }
+  }
+}
+

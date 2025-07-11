@@ -2,9 +2,12 @@
   color: var(--color-font);
   width: 100%;
   max-width: 1520px;
-  height: 132px;
-  margin: 0 auto;
+  margin: 19rem auto;
   padding: 0 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // align-items: center;
   @include tablet{
     padding: 0 30px;
   }
@@ -18,5 +21,11 @@
   p{
     font-family: 'NanumSquareNeoBold';
     font-size: 2rem
+  }
+  .card-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

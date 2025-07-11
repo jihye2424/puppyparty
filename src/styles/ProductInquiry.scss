@@ -1,0 +1,56 @@
+.product-inquiry {
+    
+width: 100%;
+  max-width: 1440px;
+  height: 2000px;
+  margin: 0 auto;
+  color: #333;
+  font-size: 25px;
+
+  .description {
+    font-family: 'yg-jalnan';
+    margin-bottom: 10px;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--color-main);
+    margin: 15px 0;
+  }
+
+  .inquiry-list {
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .no-inquiry {
+      color: #999;
+    
+    }
+  }
+
+  .write-button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    .write-button {
+          font-family: 'yg-jalnan';
+      background-color: var(--color-main);
+      color: var(--color-main2);
+      border: none;
+      padding: 10px 20px;
+      font-size: 25px;
+      border-radius: 4px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+
+      &:hover {
+        background-color: var(--color-main);
+      }
+    }
+  }
+}

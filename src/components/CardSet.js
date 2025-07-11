@@ -3,7 +3,6 @@ import CardSection from "./CardSection";
 
 
 const CardSet = ({ setItem, setName, setIdx }) => {
-  console.log(setItem);
   return (
     <div id="cardset" className={setName}>
       <CardSection
