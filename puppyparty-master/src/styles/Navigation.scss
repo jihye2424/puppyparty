@@ -1,0 +1,91 @@
+nav{
+  color: var(--color-font);
+  position: relative;
+  width: 100%;
+  max-width: 1520px;
+  height: 132px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+    @include tablet{
+    padding: 0 30px;
+    }
+    @include mobile{
+    padding: 0 15px;
+    }
+  .nav-logo {
+    @include mobile {
+      width: 120px;
+    }
+  }
+  .headerMenu{
+    font-family: 'NanumSquareNeo';
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 7rem;
+    font-size: 20px;
+    font-weight: bolder;
+    @include tablet{
+      display: none;
+    }
+  }
+  .toggleMenu{
+    padding: 3rem;
+    position: absolute;
+    top: 10rem;
+    right: 2rem;
+    z-index: 10;
+    background-color: var(--color-bg);
+    border-radius: 20px;
+    text-align: center;
+    .closeIcon{
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 25px;
+    }
+    h1{
+      margin: 1rem auto;
+      padding: 4rem;
+      font-size: 40px;
+      border-bottom: 1px solid black;
+      @include tablet{
+        font-size: 30px;
+      }
+      @include mobile{
+        font-size: 20px;
+      }
+    }
+    li{
+      font-size: 30px;
+      padding: 3rem;
+      @include tablet{
+        font-size: 25px;
+      }
+      @include mobile{
+        font-size: 15px;
+      }
+    }
+  }
+  .headerIcon{
+    cursor: pointer;
+    display: flex;
+    gap: 3rem;
+    font-size: 35px;
+    font-weight: bolder;
+    .menuIcon{
+      display: none;
+      @include tablet{
+        outline: none;
+        display: block;
+      }
+    }
+  }
+}

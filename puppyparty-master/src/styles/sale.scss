@@ -1,0 +1,67 @@
+#sale {
+  overflow-x: hidden;
+  width: 100vw;
+  background-color: var(--color-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 443px;
+  margin: 15rem 0;
+  .sale-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    .sale-txt {
+      height: 30%;
+      // background-color: red;
+      text-align: center;
+      color: var(--color-font);
+      display: flex;
+      flex-direction: column;
+      p {
+        font-size: 2rem;
+        color: var(--color-sub1);
+        @include mobile {
+          font-size: 1.8rem;
+        }
+      }
+      h2 {
+        font-family: 'NanumSquareNeoExtraBold';
+        font-size: 3.5rem;
+        margin: 2rem 0;
+        @include mobile {
+          font-size: 3rem;
+        }
+      }
+      h1 {
+        font-size: 3.5rem;
+        font-family: 'NanumSquareNeoLight';
+        @include mobile {
+          font-size: 3rem;
+        }
+        span {
+          width: 210px;
+          display: inline-block;
+          font-family: 'NanumSquareNeoHeavy';
+          font-size: 4.5rem;
+          color: var(--color-sub1);
+          @include mobile {
+            width: 200px;
+            font-size: 4rem;
+          }
+        }
+      }
+    }
+    button {
+      width: 250px;
+      height: 60px;
+      background-color: var(--color-sub1);
+      color: #fff;
+      border-radius: 50px;
+      border: none;
+      font-size: 2rem;
+    }
+  }
+}

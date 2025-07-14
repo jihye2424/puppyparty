@@ -1,0 +1,25 @@
+@import './styles/global.scss';
+@import './styles/font.scss';
+@import './styles/mixin.scss';
+
+//컴포넌트
+@import './styles/Navigation.scss';    // nav
+@import './styles/mainbanner.scss';    // mian banner
+@import './styles/bestproducts.scss';  // best products
+@import './styles/sale.scss';          // 누적 판매량
+@import './styles/Categori.scss';      // 카테고리별 인기 상품
+@import './styles/Cardset.scss';       // 카테고리별 인기 상품 카드
+@import './styles/cart.scss';          // 장바구니
+@import './styles/EventSection.scss';  // 이벤트
+@import './styles/footer.scss';        // footer
+
+//상세페이지
+@import './styles/ProductPage.scss';
+@import './styles/ProductTopSection.scss';
+@import './styles/ProductImageSlider.scss';
+@import './styles/ProductTabs.scss';
+@import './styles/ReviewSection.scss';
+@import './styles/ProductInquiry.scss';
+@import './styles/ReturnExchangeInfo.scss';
+@import './styles/ReturnExchangeInfo.scss';
+
